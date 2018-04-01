@@ -7,6 +7,10 @@
 Component({
   behaviors: [],
   properties: {
+    total: {
+      type: Number,
+      value: 4
+    },
     rate: {
       type: String,
       value: '0'
@@ -38,7 +42,7 @@ Component({
       for (var i = 0; i < this.data.rate; i++) {
         starArr.push(this.data.icon);
       }
-      for (let j = 0; j < 5 - this.data.rate; j++) {
+     for (let j = 0; j < this.data.total - this.data.rate; j++) {
         starArr.push(this.data.icon + '-o');
       }
       this.setData({
